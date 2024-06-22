@@ -16,9 +16,14 @@ function Hero() {
   };
   const handleLogout = () => {
     localStorage.removeItem("authToken");
+    localStorage.removeItem("user");
     dispatch({ type: "LOGOUT" });
     // navigate("/login");
   };
+
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  console.log(storedUser);
+  
 
   return (
     <>

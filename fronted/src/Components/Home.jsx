@@ -7,7 +7,13 @@ import Hero from "./Hero";
 function Home() {
   const location = useLocation();
   const [isNavbarMobile, setIsNavbarMobile] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false); 
+  
   useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser && storedUser.profile === "admin") {
+      setIsAdmin(true); // Set isAdmin to true if user is admin
+    }
     const select = (el, all = false) => {
       el = el.trim();
       if (all) {
@@ -116,9 +122,9 @@ function Home() {
       <header id="header" className="fixed-top bg-dark">
         <div className="container d-flex align-items-center justify-content-between">
           <h1 className="logo">
-            <a href="">
+            <a href="" className="flex items-center">
               <img src="./img/myLogo.png" alt="" />
-              THE HOMEMAKERS
+              <span className="text-xl md:text-3xl">THE HOMEMAKERS</span>
             </a>
           </h1>
           <nav id="navbar" className="navbar">
@@ -153,6 +159,18 @@ function Home() {
                   Contact
                 </a>
               </li>
+              {isAdmin && ( // Render admin menu if isAdmin is true
+                <li>
+                  <Link
+                    className={`nav-link scrollto ${
+                      location.pathname === "/admin" ? "active" : ""
+                    }`}
+                    to="/admin"
+                  >
+                    Admin
+                  </Link>
+                </li>
+              )}
             </ul>
             <i
               className="bi bi-list mobile-nav-toggle"

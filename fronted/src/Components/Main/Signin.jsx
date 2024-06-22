@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Signin() {
   const [isLogin, setIsLogin] = useState(true);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -28,15 +31,24 @@ function Signin() {
         },
         body: JSON.stringify(formData),
       });
-      if (response.status != 201) {
+      if (!response.ok) {
+        if (response.status === 409) {
+          throw new Error("User with email or username already exists");
+        }
         throw new Error("Failed to sign up");
       }
-
+  
+      toast.success("Signup Successful");
       const result = await response.json();
       setSuccess(true);
-      // console.log("Signup successful:", result);
+  
+      setTimeout(() => {
+        navigate("/login"); // Redirect to login page after successful signup
+      }, 500);
+  
     } catch (error) {
       setError(error.message);
+      toast.error(error.message)
     }
     // console.log("Signup submitted", formData);
   };
@@ -100,6 +112,7 @@ function Signin() {
           </form>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 }

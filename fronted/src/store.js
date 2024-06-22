@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 const authToken = localStorage.getItem('authToken');
 
 const initialState = {
-  isAuthenticated: !!authToken, // true if authToken exists, false otherwise
+  isAuthenticated: !!authToken,
 };
 const authReducer = (state = initialState, action) => {
   switch (action.type) {

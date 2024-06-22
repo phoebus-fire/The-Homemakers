@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
- // Make sure to create this CSS file for styling
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AdminForm = () => {
   const [form, setForm] = useState({
@@ -8,7 +9,7 @@ const AdminForm = () => {
     companyName: '',
     workMode: '',
     jobType: '',
-    pay: '',
+    pay: Number,
   });
 
   const handleChange = (e) => {
@@ -16,31 +17,82 @@ const AdminForm = () => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted', form);
+    try {
+      const response = await fetch("http://localhost:8000/employment/data_insert", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to submit data");
+      }
+  
+      const result = await response.json();
+      console.log(result);
+  
+      // Show success toast notification
+      toast.success("Data submitted successfully");
+  
+      // Clear form data after successful submission
+      setForm({
+        jobTitle: '',
+        jobLocation: '',
+        companyName: '',
+        workMode: '',
+        jobType: '',
+        pay: 0,
+      });
+  
+      // Optional: Set success state if needed
+      setSuccess(true);
+    } catch (error) {
+      setError(error.message);
+      // Optional: Set success state to false if needed
+      setSuccess(false);
+  
+      // Show error toast notification
+      toast.error("Failed to submit data");
+    }
   };
+  
 
   return (
     <div className="admin-form-container">
-      <h1>Admin Job Form</h1>
+      <h1 className='text-3xl font-bold'>Create a New JOB</h1>
       <form onSubmit={handleSubmit} className="admin-form">
         <div className="input-group">
           <label>Job Title</label>
-          <input type="text" name="jobTitle" value={form.jobTitle} onChange={handleChange} required />
+          <input type="text" name="jobTitle" placeholder='Enter Job Title' value={form.jobTitle} onChange={handleChange} required />
         </div>
         <div className="input-group">
           <label>Job Location</label>
-          <input type="text" name="jobLocation" value={form.jobLocation} onChange={handleChange} required />
+          <select name="jobLocation" value={form.jobLocation} onChange={handleChange} required>
+            <option value="">Select...</option>
+            <option value="jaipur">Jaipur</option>
+            <option value="lucknow">Lucknow</option>
+            <option value="alwar">Alwar</option>
+            <option value="agra">Agra</option>
+            <option value="mathura">Mathura</option>
+            <option value="delhi">Delhi</option>
+            <option value="jodhpur">Jodhpur</option>
+          </select>
         </div>
         <div className="input-group">
           <label>Company Name</label>
-          <input type="text" name="companyName" value={form.companyName} onChange={handleChange} required />
+          <input type="text" name="companyName" placeholder='Enter Company Name' value={form.companyName} onChange={handleChange} required />
         </div>
         <div className="input-group">
           <label>Work Mode</label>
-          <input type="text" name="workMode" value={form.workMode} onChange={handleChange} required />
+          <select name="workMode" value={form.workMode} onChange={handleChange} required>
+            <option value="">Select...</option>
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+          </select>
         </div>
         <div className="input-group">
           <label>Type</label>
@@ -52,10 +104,11 @@ const AdminForm = () => {
         </div>
         <div className="input-group">
           <label>Pay</label>
-          <input type="text" name="pay" value={form.pay} onChange={handleChange} required />
+          <input type="number" name="pay" placeholder='Enter Salary' value={form.pay} onChange={handleChange} required />
         </div>
         <button type="submit" className="submit-button">Submit</button>
       </form>
+      <ToastContainer/>
     </div>
   );
 };
