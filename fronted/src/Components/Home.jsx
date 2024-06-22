@@ -119,7 +119,7 @@ function Home() {
   return (
     <>
       {/* ======= Header ======= */}
-      <header id="header" className="fixed-top bg-dark">
+      <header id="header" className="fixed-top bg-[#00000091]">
         <div className="container d-flex align-items-center justify-content-between">
           <h1 className="logo">
             <a href="" className="flex items-center">

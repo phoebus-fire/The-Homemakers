@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -9,7 +10,7 @@ function Contact() {
     message: "",
   });
 
-  // const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,20 +19,21 @@ function Contact() {
       [name]: value,
     });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // setStatus("Loading");
+    setStatus("Loading");
     try {
       const response = await axios.post(
-        "http://localhost:8000/users/send-email",
+        "http://localhost:8000/users/send_mail",
         formData
       );
       console.log("response", response.data);
-      // setStatus(response.data);
+      setStatus(response.message);
+      toast.success("Mail Send Successfully")
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
       setStatus("Error sending email");
+      toast.error("Error sending email")
     }
   };
 
@@ -120,13 +122,7 @@ function Contact() {
                                 <div className="loading">Loading</div>
                               )}
                               {status && (
-                                <div
-                                  className={
-                                    status.includes("Error")
-                                      ? "error-message"
-                                      : "sent-message"
-                                  }
-                                >
+                                <div>
                                   {status}
                                 </div>
                               )}
@@ -209,6 +205,7 @@ function Contact() {
           </div>
         </div>
       </section>
+      <ToastContainer/>
     </>
   );
 }
