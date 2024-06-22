@@ -9,6 +9,7 @@ import Signin from "./Components/Main/Signin";
 import Jobapp from "./Components/Admin/Jobapp";
 import PrivateRoute from "./Components/PrivateRoute";
 import Admin from "./Components/Admin/Admin";
+import Blogs from "./Components/Main/Blogs";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />
         <Route path="/jobapp" element={<Jobapp />} />
+        <Route path="/blog/:id" element={<Blogs/>} />
       </Routes>
     </>
   );

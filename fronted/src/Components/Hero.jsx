@@ -7,7 +7,7 @@ function Hero() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.isAuthenticated);
   const handleClick = () => {
-    const phoneNumber = "6378852898"; // Replace with the target phone number
+    const phoneNumber = "6393817440"; // Replace with the target phone number
     const message = "Hello, I would like to get in touch with you!"; // Optional pre-filled message
     const url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(
       message
@@ -23,7 +23,6 @@ function Hero() {
 
   const storedUser = JSON.parse(localStorage.getItem("user"));
   console.log(storedUser);
-  
 
   return (
     <>
@@ -41,7 +40,7 @@ function Hero() {
               {isAuthenticated ? (
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn bg-[#fff] text-black shadow-inner"
                   style={{
                     fontSize: "16px",
                     padding: "10px 20px",
@@ -54,7 +53,7 @@ function Hero() {
               ) : (
                 <button
                   type="button"
-                  className="btn btn-primary"
+                  className="btn bg-[#fff] text-black shadow-inner"
                   style={{
                     fontSize: "16px",
                     padding: "10px 20px",

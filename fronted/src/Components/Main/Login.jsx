@@ -45,6 +45,7 @@ const AuthPage = () => {
       }, 500)
     } catch (error) {
       setError(error.message);
+      toast.error(error.message)
     }
   };
   const handleInputChange = (event) => {

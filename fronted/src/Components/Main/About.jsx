@@ -9,11 +9,11 @@ function About() {
               <div className="box-shadow-full">
                 <div className="row">
                   <div className="col-md-6">
-                    <div className="row">
+                    <div className="row md:w-full md:h-full h-[250px]">
                       <img
                         width={"100%"}
                         src="/img/aboutimg.png"
-                        // className="img-fluid rounded b-shadow-a"
+                        className="w-full h-full object-cover"
                         alt=""
                       />
                     </div>

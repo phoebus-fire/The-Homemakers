@@ -4,6 +4,7 @@ import { User } from "../models/user.model.js"
 import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken"
 import mongoose from "mongoose";
+import nodemailer from 'nodemailer'
 
 const registerUser = asyncHandler(async (req, res) => {
     const { email, username, password } = req.body
@@ -109,18 +110,19 @@ const getCurrentUser = asyncHandler(async (req, res) => {
 })
 
 const sendMail = asyncHandler(async (req, res) => {
-    const receivingEmailAddress = ''; // Replace with your receiving email address
+    const receivingEmailAddress = 'laxmishivashukla@gmail.com';
 
     const { name, email, subject, message } = req.body;
+    console.log(req.body)
 
     if (!name || !email || !subject || !message) {
         return res.status(400).send('All fields are required');
     }
     const transporter = nodemailer.createTransport({
-        service: 'gmail', // You can use other services like SendGrid, Mailgun, etc.
+        service: 'gmail',
         auth: {
-            user: '', // Replace with your email
-            pass: ''   // Replace with your email password
+            user: 'laxmishivashukla@gmail.com',
+            pass: 'smjt cdsl ohcj wgcx'
         }
     });
 
@@ -131,12 +133,20 @@ const sendMail = asyncHandler(async (req, res) => {
         text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     };
 
-    const info = await transporter.sendMail(mailOptions);
+    // const info = await transporter.sendMail(mailOptions);
+    const info = transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+          console.log(error);
+        } else {
+          console.log('Email sent: ' + info.response);
+        }
+      });
+      console.log(info)
     return res
         .status(200)
         .json(new ApiResponse(
             200,
-            info.response,
+            // info.response,
             "Email sent successfully"
         ))
 })
