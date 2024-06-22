@@ -8,11 +8,12 @@ import Login from "./Components/Main/Login";
 import Signin from "./Components/Main/Signin";
 import Jobapp from "./Components/Admin/Jobapp";
 import PrivateRoute from "./Components/PrivateRoute";
+import Admin from "./Components/Admin/Admin";
 
 function App() {
   return (
     <>
-      <Routes>
+      <Routes> 
         <Route path="/" element={<Home />} />
         <Route
           path="/employment"
@@ -25,6 +26,10 @@ function App() {
         <Route
           path="/leisure"
           element={<PrivateRoute element={<Leisure />} />}
+        />
+        <Route
+          path="/admin"
+          element={<PrivateRoute element={<Admin />} />}
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<Signin />} />

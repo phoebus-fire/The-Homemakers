@@ -2,6 +2,10 @@ import { MdHome } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function Employment() {
   const [jobCards, setJobCards] = useState([]);
   const [formData, setFormData] = useState({
@@ -10,164 +14,124 @@ function Employment() {
     company: "",
     location: "",
   });
+
   useEffect(() => {
-    // Function to fetch data
     const fetchData = async () => {
       try {
-        // Fetch data from an API endpoint
-        const response = await fetch(
-          "http://localhost:8000/employment/data_get",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          }
-        );
-        // Parse the response as JSON
+        const response = await fetch("http://localhost:8000/employment/data_get", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
         const jsonData = await response.json();
-        // Update the state variable with the fetched data
         setJobCards(jsonData.data);
       } catch (error) {
-        // Handle errors
         console.error("Error fetching data:", error);
       }
     };
-    // const columnData = async () => {
-    //   try {
-    //     // Fetch data from an API endpoint
-    //     const response = await fetch(
-    //       `localhost:8000/employment/data_column?column=${'mode'}`
-    //     );
-    //     // Parse the response as JSON
-    //     const jsonData = await response.json();
-    //     // Update the state variable with the fetched data
-    //     setJobCards(jsonData.data);
-    //   } catch (error) {
-    //     // Handle errors
-    //     console.error("Error fetching data:", error);
-    //   }
 
-    // };
     fetchData();
-    // columnData();
   }, [formData]);
 
-  const handleLocationChange = (event) => {
+  const handleChange = (event) => {
     setFormData({
       ...formData,
-      location: event.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
-  const handleJobChange = (event) => {
-    setFormData({
-      ...formData,
-      company: event.target.value,
-    });
-  };
-
-  const handleEducationChange = (event) => {
-    setFormData({
-      ...formData,
-      type: event.target.value,
-    });
-  };
-
-  const handleWorkModeChange = (event) => {
-    setFormData({
-      ...formData,
-      mode: event.target.value,
-    });
-  };
   return (
-    <div className="flex flex-col px-[3rem] bg-#F5F5F5 h-auto">
-      <h1 className="text-5xl font-semibold w-full text-center py-[3rem]">
-        Employment
-      </h1>
-      <div className="grid sm:grid-cols-[1fr_4fr] gap-[2rem] sm:overflow-auto">
-        <div className="sm:sticky top-0 h-[22rem] bg-white rounded-xl flex flex-col gap-[1rem] p-[1rem] shadow-xl">
-          <h3 className="font-semibold text-xl">Filters</h3>
-          <div className="flex flex-col items-start gap-[0.5rem]">
-            <h4 className="font-semibold">Location</h4>
-            <select
-              name="location"
-              className="px-[6px] py-[3px] rounded-md"
-              value={formData.location}
-              onChange={handleLocationChange}
-            >
-              <option value="">Select Location</option>
-              {}
-              <option value="Lucknow">Lucknow</option>
-              <option value="alwar">Alwar</option>
-              <option value="Agra">Agra</option>
-              <option value="Mathura">Mathura</option>
-              <option value="Delhi">Delhi</option>
-              <option value="Jodhpur">Jodhpur</option>
-            </select>
-          </div>
-          <div className="flex flex-col items-start gap-[0.5rem]">
-            <h4 className="font-semibold">Job Type</h4>
-            <select
-              name="company"
-              className="px-[6px] py-[3px] rounded-md"
-              value={formData.company}
-              onChange={handleJobChange}
-            >
-              <option value="">Select Job</option>
-              <option value="Option 1">Option 1</option>
-              <option value="Option 2">Option 2</option>
-            </select>
-          </div>
-          <div className="flex flex-col items-start gap-[0.5rem]">
-            <h4 className="font-semibold">Education</h4>
-            <select
-              name="type"
-              className="px-[6px] py-[3px] rounded-md"
-              value={formData.type}
-              onChange={handleEducationChange}
-            >
-              <option value="">Select Education</option>
-              <option value="Option 1">Option 1</option>
-              <option value="Option 2">Option 2</option>
-            </select>
-          </div>
-          <div className="flex flex-col items-start gap-[0.5rem]">
-            <h4 className="font-semibold">Work Mode</h4>
-            <select
-              name="mode"
-              className="px-[6px] py-[3px] rounded-md"
-              value={formData.mode}
-              onChange={handleWorkModeChange}
-            >
-              <option value="">Select Work Mode</option>
-              <option value="Option 1">Option 1</option>
-              <option value="Option 2">Option 2</option>
-            </select>
+    <div className="flex flex-col px-6 sm:px-12 bg-gray-100 min-h-screen">
+      <h1 className="text-5xl font-bold text-center py-12">Employment</h1>
+      <div className="grid sm:grid-cols-[1fr_auto_4fr] gap-8">
+        <div className="bg-white rounded-xl flex flex-col gap-6 p-6 shadow-lg">
+          <h3 className="font-semibold text-2xl text-center">Filters</h3>
+          <div className="flex flex-col gap-4">
+            <div>
+              <h4 className="font-semibold mb-2">Location</h4>
+              <select
+                name="location"
+                className="px-4 py-2 w-full rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={formData.location}
+                onChange={handleChange}
+              >
+                <option value="">Select Location</option>
+                <option value="jaipur">Jaipur</option>
+                <option value="lucknow">Lucknow</option>
+                <option value="alwar">Alwar</option>
+                <option value="agra">Agra</option>
+                <option value="mathura">Mathura</option>
+                <option value="delhi">Delhi</option>
+                <option value="jodhpur">Jodhpur</option>
+              </select>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">Job Type</h4>
+              <select
+                name="type"
+                className="px-4 py-2 w-full rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={formData.type}
+                onChange={handleChange}
+              >
+                <option value="">Select Job</option>
+                <option value="full-time">Full Time</option>
+                <option value="part-time">Part Time</option>
+              </select>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">Education</h4>
+              <select
+                name="education"
+                className="px-4 py-2 w-full rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={formData.education}
+                onChange={handleChange}
+              >
+                <option value="">Select Education</option>
+                <option value="Option 1">Option 1</option>
+                <option value="Option 2">Option 2</option>
+              </select>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">Work Mode</h4>
+              <select
+                name="mode"
+                className="px-4 py-2 w-full rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                value={formData.mode}
+                onChange={handleChange}
+              >
+                <option value="">Select Work Mode</option>
+                <option value="online">Online</option>
+                <option value="offline">Offline</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-[1.5rem]">
+
+        <div className="hidden sm:block bg-gray-300 w-px" />
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {jobCards.map((job, index) => (
             <div
               key={index}
-              className="flex flex-col items-start gap-[1rem] bg-white rounded-xl shadow-md p-[1rem]"
+              className="flex flex-col items-start gap-4 bg-white rounded-xl shadow-lg p-6"
             >
-              <div className="flex flex-col gap-[0.3rem]">
-                <h1 className="font-semibold text-xl">{job.title}</h1>
-                <p className="text-gray-500">{job.company}</p>
+              <div className="flex flex-col gap-2">
+                <h1 className="font-semibold text-xl">{capitalizeFirstLetter(job.title)}</h1>
+                <p className="text-gray-500">{capitalizeFirstLetter(job.company)}</p>
               </div>
-              <div>
-                <p className="text-gray-500 flex items-center gap-[5px]">
-                  <FaLocationDot />
-                  {job.location}
+              <div className="flex flex-col gap-1">
+                <p className="text-gray-500 flex items-center gap-2">
+                  <FaLocationDot className="text-blue-500" />
+                  {capitalizeFirstLetter(job.location)}
                 </p>
-                <p className="text-gray-500 flex items-center gap-[5px]">
-                  <MdHome />
+                <p className="text-gray-500 flex items-center gap-2">
+                  <MdHome className="text-blue-500" />
                   {job.mode}
                 </p>
               </div>
-              <p className="bg-gray-800 text-white py-[4px] px-[8px] rounded-md">
+              <p className="bg-blue-500 text-white py-1 px-3 rounded-md">
                 {job.type}
               </p>
             </div>

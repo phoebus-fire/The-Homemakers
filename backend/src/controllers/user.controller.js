@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 
 const registerUser = asyncHandler(async (req, res) => {
     const { email, username, password } = req.body
-    //console.log("email: ", email);
+    console.log("email: ", email);
 
     const existedUser = await User.findOne({
         $or: [{ username }, { email }]
@@ -40,7 +40,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
 const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body
-    // console.log(email);
+    console.log(email);
 
     const user = await User.findOne({
         $or: [{ email }]

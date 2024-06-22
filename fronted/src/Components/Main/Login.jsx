@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// Make sure to create this CSS file for styling
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AuthPage = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -32,13 +33,16 @@ const AuthPage = () => {
       if (response.status != 200) {
         throw new Error("Failed to Login");
       }
-
+      toast.success("User Loged In")
       const result = await response.json();
-      console.log(result.data.token);
+      console.log(result);
       setSuccess(true);
       localStorage.setItem("authToken", result.data.token);
+      localStorage.setItem("user", JSON.stringify(result.data.user));
       dispatch({ type: "LOGIN" });
-      navigate("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 500)
     } catch (error) {
       setError(error.message);
     }
@@ -95,6 +99,7 @@ const AuthPage = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

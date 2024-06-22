@@ -4,10 +4,16 @@ import { Employment } from "../models/employment.model.js"
 import { ApiResponse } from "../utils/ApiResponse.js";
 
 const employmentDataInsert = asyncHandler(async (req, res) => {
-    const { location, mode, type, title, company } = req.body
+    console.log(req.body)
+    const { jobTitle, jobLocation, companyName, workMode, jobType, pay} = req.body
 
     const employmentData = await Employment.create({
-        location, mode, type, title, company
+        location: jobLocation, 
+        mode: workMode, 
+        type: jobType, 
+        title: jobTitle, 
+        company: companyName, 
+        salary: pay
     })
 
     if (!employmentData) {

@@ -29,6 +29,12 @@ const employmentSchema = new Schema(
             required: true,
             lowecase: true,
         },
+        salary: {
+            type: Number,
+            required: true,
+            lowecase: true,
+        },
+        
     },
     {
         timestamps: true
