@@ -832,6 +832,10 @@ a:hover {
     padding-bottom: 4rem;
   }
 }
+.lead
+{
+  font-size:medium;
+}
 
 .about-mf .about-img {
   margin-bottom: 2rem;

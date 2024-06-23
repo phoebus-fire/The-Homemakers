@@ -21,26 +21,16 @@ function About() {
                   <div className="col-md-6">
                     <div className="about-me pt-4 pt-md-0">
                       <div className="title-box-2">
-                        <h5 className="title-left">About me</h5>
+                        <h5 className="title-left">About Us</h5>
                       </div>
                       <p className="lead">
-                        Curabitur non nulla sit amet nisl tempus convallis quis
-                        ac lectus. Curabitur arcu erat, accumsan id imperdiet
-                        et, porttitor at sem. Praesent sapien massa, convallis a
-                        pellentesque nec, egestas non nisi. Nulla porttitor
-                        accumsan tincidunt.
+                      Welcome to "The Homemakers," a pioneering platform dedicated to empowering and celebrating the remarkable contributions of homemakers worldwide. We recognize the vital role of homemakers in nurturing families and communities. Our mission is to empower these extraordinary individuals by providing essential resources in employment opportunities, skill development, and leisure activities tailored to their unique needs.
                       </p>
                       <p className="lead">
-                        Mauris blandit aliquet elit, eget tincidunt nibh
-                        pulvinar a. Vivamus suscipit tortor eget felis porttitor
-                        volutpat. Vestibulum ac diam sit amet quam vehicula
-                        elementum sed sit amet dui. porttitor at sem.
+                      At "The Homemakers," we believe in fostering a supportive environment where homemakers can thrive beyond their traditional roles. Our platform is designed to offer flexible job opportunities, curated skill development programs, and enriching leisure activities. By empowering homemakers to explore their potential and pursue their aspirations, we aim to redefine societal norms and elevate the status of homemakers globally.
                       </p>
                       <p className="lead">
-                        Nulla porttitor accumsan tincidunt. Quisque velit nisi,
-                        pretium ut lacinia in, elementum id enim. Nulla
-                        porttitor accumsan tincidunt. Mauris blandit aliquet
-                        elit, eget tincidunt nibh pulvinar a.
+                      "The Homemakers" is committed to creating a positive impact. Join us as we celebrate the resilience and dedication of homemakers, and together, let's build a future where every homemaker can achieve personal fulfillment and professional success.
                       </p>
                     </div>
                   </div>

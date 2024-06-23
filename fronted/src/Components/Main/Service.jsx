@@ -8,9 +8,6 @@ function Service() {
             <div className="col-sm-12">
               <div className="title-box text-center">
                 <h3 className="title-a">Services</h3>
-                <p className="subtitle-a">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                </p>
                 <div className="line-mf" />
               </div>
             </div>
@@ -27,9 +24,10 @@ function Service() {
                   <div className="service-content">
                     <h2 className="s-title">Employment</h2>
                     <p className="s-description text-center">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Magni adipisci eaque autem fugiat! Quia, provident vitae!
-                      Magni tempora perferendis eum non provident.
+                    Find Your Dream Job.
+                    </p>
+                    <p className="s-description text-center">
+                   You Are More Than Just a Homemaker!
                     </p>
                   </div>
                 </div>
@@ -40,15 +38,16 @@ function Service() {
               <div className="service-box">
                 <div className="service-ico">
                   <span className="ico-circle">
-                    <i className="bi bi-card-checklist" />
+                  <i class="bi bi-clipboard2-data"></i>
                   </span>
                 </div>
                 <div className="service-content">
                   <h2 className="s-title">Skill Development</h2>
                   <p className="s-description text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Magni adipisci eaque autem fugiat! Quia, provident vitae!
-                    Magni tempora perferendis eum non provident.
+                  Dust Off Your Dreams.
+                  </p>
+                  <p className="s-description text-center">
+                  Develop the Skills You've Always Wanted!
                   </p>
                 </div>
               </div>
@@ -59,15 +58,16 @@ function Service() {
               <div className="service-box">
                 <div className="service-ico">
                   <span className="ico-circle">
-                    <i className="bi bi-bar-chart" />
+                  <i class="bi bi-person-hearts"></i>
                   </span>
                 </div>
                 <div className="service-content">
-                  <h2 className="s-title">Photography</h2>
+                  <h2 className="s-title">Leisure</h2>
                   <p className="s-description text-center">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Magni adipisci eaque autem fugiat! Quia, provident vitae!
-                    Magni tempora perferendis eum non provident.
+                  Ditch the Routine.
+                  </p>
+                  <p className="s-description text-center">
+                  Explore Leisure Options!
                   </p>
                 </div>
               </div>

@@ -12,7 +12,7 @@ const Blogs = () => {
               <div className="title-box text-center">
                 <h3 className="title-a">Blog</h3>
                 <p className="subtitle-a">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Homemakers who think for themselves build stronger, more fulfilling lives. Read some famous blogs.
                 </p>
                 <div className="line-mf" />
               </div>

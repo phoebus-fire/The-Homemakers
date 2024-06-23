@@ -5,7 +5,7 @@ import Employment from "./Components/Main/Sub/Employment";
 import Skilldev from "./Components/Main/Sub/Skilldev";
 import Leisure from "./Components/Main/Sub/Leisure";
 import Login from "./Components/Main/Login";
-import Signin from "./Components/Main/Signin";
+import Signup from "./Components/Main/Signup";
 import Jobapp from "./Components/Admin/Jobapp";
 import PrivateRoute from "./Components/PrivateRoute";
 import Admin from "./Components/Admin/Admin";
@@ -33,7 +33,7 @@ function App() {
           element={<PrivateRoute element={<Admin />} />}
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/jobapp" element={<Jobapp />} />
         <Route path="/blog/:id" element={<Blogs/>} />
       </Routes>

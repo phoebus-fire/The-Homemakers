@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { NavLink } from 'react-router-dom'
 const Leisure = () => {
   return (
     <div>
@@ -7,55 +7,9 @@ const Leisure = () => {
     <h1 className="text-5xl font-semibold w-full text-center py-[3rem]">
       Leisure
     </h1>
-    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-[3rem]`'>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-[3rem]'>
     <div className="w-full">
-    
-            <div className="service-box shadow-md">
-              <div className='img-dimensions'>
-                <img src="/travel1.jpg" alt="" />
-              </div>
-              <div className="service-content">
-                <h2 className="s-title">Responsive Design</h2>
-                <p className="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni adipisci eaque autem fugiat! Quia, provident vitae!
-                  Magni tempora perferendis eum non provident.
-                </p>
-              </div>
-            </div>
-    
-          </div>
-          <div className="w-full">
-            <div className="service-box shadow-md">
-              <div className='img-dimensions'>
-                <img src="/travel2.jpg" alt="" />
-              </div>
-              <div className="service-content">
-                <h2 className="s-title">Responsive Design</h2>
-                <p className="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni adipisci eaque autem fugiat! Quia, provident vitae!
-                  Magni tempora perferendis eum non provident.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="w-full">
-            <div className="service-box shadow-md">
-              <div className='img-dimensions'>
-                <img src="/travel3.jpg" alt="" />
-              </div>
-              <div className="service-content">
-                <h2 className="s-title">Responsive Design</h2>
-                <p className="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni adipisci eaque autem fugiat! Quia, provident vitae!
-                  Magni tempora perferendis eum non provident.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="w-full">
+      <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
             <div className="service-box shadow-md">
               <div className='img-dimensions'>
                 <img src="/services.jpg" alt="" />
@@ -69,29 +23,16 @@ const Leisure = () => {
                 </p>
               </div>
             </div>
+            </NavLink>
           </div>
           <div className="w-full">
-          <div className="service-box shadow-md">
-          <div className='img-dimensions'>
-                <img src="/services.jpg" alt="" />
-              </div>
-              <div className="service-content">
-                <h2 className="s-title">Graphic Design</h2>
-                <p className="s-description text-center">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni adipisci eaque autem fugiat! Quia, provident vitae!
-                  Magni tempora perferendis eum non provident.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="w-full">
+      <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
             <div className="service-box shadow-md">
-            <div className='img-dimensions'>
+              <div className='img-dimensions'>
                 <img src="/services.jpg" alt="" />
               </div>
               <div className="service-content">
-                <h2 className="s-title">Marketing Services</h2>
+                <h2 className="s-title">Responsive Design</h2>
                 <p className="s-description text-center">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Magni adipisci eaque autem fugiat! Quia, provident vitae!
@@ -99,9 +40,78 @@ const Leisure = () => {
                 </p>
               </div>
             </div>
+            </NavLink>
           </div>
+          <div className="w-full">
+      <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
+            <div className="service-box shadow-md">
+              <div className='img-dimensions'>
+                <img src="/services.jpg" alt="" />
+              </div>
+              <div className="service-content">
+                <h2 className="s-title">Responsive Design</h2>
+                <p className="s-description text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni adipisci eaque autem fugiat! Quia, provident vitae!
+                  Magni tempora perferendis eum non provident.
+                </p>
+              </div>
+            </div>
+            </NavLink>
+          </div>
+          <div className="w-full">
+      <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
+            <div className="service-box shadow-md">
+              <div className='img-dimensions'>
+                <img src="/services.jpg" alt="" />
+              </div>
+              <div className="service-content">
+                <h2 className="s-title">Responsive Design</h2>
+                <p className="s-description text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni adipisci eaque autem fugiat! Quia, provident vitae!
+                  Magni tempora perferendis eum non provident.
+                </p>
+              </div>
+            </div>
+            </NavLink>
+          </div>
+          <div className="w-full">
+      <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
+            <div className="service-box shadow-md">
+              <div className='img-dimensions'>
+                <img src="/services.jpg" alt="" />
+              </div>
+              <div className="service-content">
+                <h2 className="s-title">Responsive Design</h2>
+                <p className="s-description text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni adipisci eaque autem fugiat! Quia, provident vitae!
+                  Magni tempora perferendis eum non provident.
+                </p>
+              </div>
+            </div>
+            </NavLink>
+          </div>
+          <div className="w-full">
+      <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
+            <div className="service-box shadow-md">
+              <div className='img-dimensions'>
+                <img src="/services.jpg" alt="" />
+              </div>
+              <div className="service-content">
+                <h2 className="s-title">Responsive Design</h2>
+                <p className="s-description text-center">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Magni adipisci eaque autem fugiat! Quia, provident vitae!
+                  Magni tempora perferendis eum non provident.
+                </p>
+              </div>
+            </div>
+            </NavLink>
           </div>
     </div>
+  </div>
   </div>
   )
 }

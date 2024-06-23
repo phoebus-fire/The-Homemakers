@@ -27,6 +27,7 @@ const skilldev = () => {
               </NavLink>
             </div>
             <div className="w-full">
+            <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
               <div className="service-box shadow-md">
                 <div className='img-dimensions'>
                   <img src="/services.jpg" alt="" />
@@ -40,8 +41,10 @@ const skilldev = () => {
                   </p>
                 </div>
               </div>
+              </NavLink>
             </div>
             <div className="w-full">
+            <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
               <div className="service-box shadow-md">
                 <div className='img-dimensions'>
                   <img src="/services.jpg" alt="" />
@@ -55,8 +58,10 @@ const skilldev = () => {
                   </p>
                 </div>
               </div>
+              </NavLink>
             </div>
             <div className="w-full">
+            <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
               <div className="service-box shadow-md">
                 <div className='img-dimensions'>
                   <img src="/services.jpg" alt="" />
@@ -70,8 +75,10 @@ const skilldev = () => {
                   </p>
                 </div>
               </div>
+              </NavLink>
             </div>
             <div className="w-full">
+            <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
             <div className="service-box shadow-md">
             <div className='img-dimensions'>
                   <img src="/services.jpg" alt="" />
@@ -85,8 +92,10 @@ const skilldev = () => {
                   </p>
                 </div>
               </div>
+              </NavLink>
             </div>
             <div className="w-full">
+            <NavLink to="https://upflairs.com/courses/full-stack-web-development-in-jaipur/">
               <div className="service-box shadow-md">
               <div className='img-dimensions'>
                   <img src="/services.jpg" alt="" />
@@ -100,11 +109,14 @@ const skilldev = () => {
                   </p>
                 </div>
               </div>
+              </NavLink>
             </div>
             </div>
+            <p> </p>
       </div>
     </div>
   )
 }
+
 
 export default skilldev

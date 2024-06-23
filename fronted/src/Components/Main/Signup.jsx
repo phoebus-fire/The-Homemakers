@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Signin() {
+function Signup() {
   const [isLogin, setIsLogin] = useState(true);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -63,7 +63,7 @@ function Signin() {
   return (
     <div className="auth-page">
       <h1 className="text-5xl font-semibold w-full text-center py-[3rem]">
-        Sign in
+        Sign up
       </h1>
       <div className="form-container">
         <div className="form signup-form">
@@ -117,4 +117,4 @@ function Signin() {
   );
 }
 
-export default Signin;
+export default Signup;
