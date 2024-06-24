@@ -145,51 +145,46 @@ function Contact() {
                       </div>
                       <div className="more-info">
                         <p className="lead">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit. Facilis dolorum dolorem soluta quidem expedita
-                          aperiam aliquid at. Totam magni ipsum suscipit amet?
-                          Autem nemo esse laboriosam ratione nobis mollitia
-                          inventore?
-                        </p>
+                        Certainly! Here's the text formatted without JSON:
+
+We welcome your inquiries and feedback. Feel free to reach out to us with any questions, concerns, or suggestions you may have. Our team is dedicated to providing prompt assistance and addressing your needs.
+
+For direct communication, please use the contact information provided below. Whether by email or through our social media channels, we are here to listen and assist you.
+
+Additionally, you can connect with us via our social media platforms for updates and news.
+
+We look forward to hearing from you and ensuring your experience with us is seamless and satisfying.                        </p>
                         <ul className="list-ico">
                           <li>
-                            <span className="bi bi-geo-alt" /> 329 WASHINGTON ST
-                            BOSTON, MA 02108
+                            <span className="bi bi-geo-alt" />LUCKNOW
                           </li>
                           <li>
                             <span className="bi bi-phone" /> (617) 557-0089
                           </li>
                           <li>
                             <span className="bi bi-envelope" />
-                            contact@example.com
+                            laxmishivashukla@gmail.com
                           </li>
                         </ul>
                       </div>
                       <div className="socials">
                         <ul>
                           <li>
-                            <a href="">
+                            <a href="https://www.facebook.com/laxmishivashukla">
                               <span className="ico-circle">
                                 <i className="bi bi-facebook" />
                               </span>
                             </a>
                           </li>
                           <li>
-                            <a href="">
+                            <a href="https://www.instagram.com/_phoebus_fire/">
                               <span className="ico-circle">
                                 <i className="bi bi-instagram" />
                               </span>
                             </a>
                           </li>
                           <li>
-                            <a href="">
-                              <span className="ico-circle">
-                                <i className="bi bi-twitter" />
-                              </span>
-                            </a>
-                          </li>
-                          <li>
-                            <a href="">
+                            <a href="https://www.linkedin.com/in/shiva-shukla-phoebus-fire/">
                               <span className="ico-circle">
                                 <i className="bi bi-linkedin" />
                               </span>
