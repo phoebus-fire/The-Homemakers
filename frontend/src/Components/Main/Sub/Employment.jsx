@@ -89,8 +89,10 @@ function Employment() {
                 onChange={handleChange}
               >
                 <option value="">Select Education</option>
-                <option value="Option 1">Option 1</option>
-                <option value="Option 2">Option 2</option>
+                <option value="Option 1">10th Pass</option>
+                <option value="Option 2">12th Pass</option>
+                <option value="Option 2">PG</option>
+                <option value="Option 2">UG</option>
               </select>
             </div>
             <div>

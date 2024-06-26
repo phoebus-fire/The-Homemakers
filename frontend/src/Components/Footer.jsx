@@ -11,7 +11,7 @@ function Footer() {
                 </p>
                 <div className="credits">
                   Designed by
-                  <a href="">Shivashukla</a>
+                  <a href=""> Shivashukla</a>
                 </div>
               </div>
             </div>

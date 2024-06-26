@@ -7,7 +7,7 @@ function Service() {
           <div className="row">
             <div className="col-sm-12">
               <div className="title-box text-center">
-                <h3 className="title-a">Services</h3>
+                <h3 className="title-a">SERVICES</h3>
                 <div className="line-mf" />
               </div>
             </div>
@@ -22,7 +22,7 @@ function Service() {
                     </span>
                   </div>
                   <div className="service-content">
-                    <h2 className="s-title">Employment</h2>
+                    <h2 className="s-title">EMPLOYMENT</h2>
                     <p className="s-description text-center">
                     Find Your Dream Job.
                     </p>
@@ -42,7 +42,7 @@ function Service() {
                   </span>
                 </div>
                 <div className="service-content">
-                  <h2 className="s-title">Skill Development</h2>
+                  <h2 className="s-title">SKILL DEVELOPMENT</h2>
                   <p className="s-description text-center">
                   Dust Off Your Dreams.
                   </p>
