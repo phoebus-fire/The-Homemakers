@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 import BlogsData from './BlogsData.json';
 
 const Blogs = () => {
+
+  const maxContentText = 100;
+  
   return (
     <>
       <section id="blog" className="blog-mf sect-pt4 route">
@@ -20,11 +23,11 @@ const Blogs = () => {
           </div>
           <div className="row">
             {BlogsData.map((blog) => (
-              <div className="col-md-4" key={blog.id}>
+              <div className="col-lg-4" key={blog.id}>
                 <div className="card card-blog">
                   <div className="card-img">
                     <NavLink to={`/blog/${blog.id}`}>
-                      <img src={blog.image} alt="" className="img-fluid" />
+                      <img src={blog.image} alt="" className="img-fluid h-[300px] w-full object-cover object-top" />
                     </NavLink>
                   </div>
                   <div className="card-body">
@@ -36,7 +39,7 @@ const Blogs = () => {
                     <h3 className="card-title">
                       <NavLink to={`/blog/${blog.id}`}>{blog.title}</NavLink>
                     </h3>
-                    <p className="card-description">{blog.content}</p>
+                    <p className="card-description">{blog.content.length > maxContentText ? `${blog.content.slice(0, maxContentText)}...` : blog.content}</p>
                   </div>
                   <div className="card-footer">
                     <div className="post-author">

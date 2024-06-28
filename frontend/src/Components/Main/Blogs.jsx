@@ -30,7 +30,7 @@ const Blog = () => {
             <div className="col-md-12">
               <div className="card card-blog">
                 <div className="card-img">
-                  <img src={blog.image} alt="" className="w-full h-[350px] object-cover" />
+                  <img src={blog.image} alt="image" className="w-full h-[450px] object-cover object-top" />
                 </div>
                 <div className="card-body">
                   <div className="card-category-box">
