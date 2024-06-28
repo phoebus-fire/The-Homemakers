@@ -105,6 +105,9 @@ function Signup() {
             <div className="toggle-link">
               Already have an account? <NavLink to="/login">Login</NavLink>
             </div>
+            <div className="toggle-link">
+                Go Home <NavLink to="/">Home</NavLink>
+              </div>
             {error && <div className="error-message">{error}</div>}
             {success && (
               <div className="success-message">Signup successful!</div>

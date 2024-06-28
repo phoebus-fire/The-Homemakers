@@ -92,6 +92,9 @@ const AuthPage = () => {
               <div className="toggle-link">
                 Don't have an account? <NavLink to="/signup">Signup</NavLink>
               </div>
+              <div className="toggle-link">
+                Go Home <NavLink to="/">Home</NavLink>
+              </div>
               {error && <div className="error-message">{error}</div>}
               {success && (
                 <div className="success-message">Login successful!</div>
